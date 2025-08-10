@@ -83,7 +83,7 @@ async function fetchWeather(city) {
     windSpeedEl.textContent = "Wind Speed: --";
     forecastContainerEl.innerHTML = "";
     errorContainerEl.classList.add("hidden");
-    const response = awaitfetch(`${backendUrl}/api/weather/${city}`, {
+    const response = await fetch(`${backendUrl}/api/weather/${city}`, {
   headers: {
     "ngrok-skip-browser-warning": "true"
   }
@@ -188,6 +188,7 @@ async function fetchWeatherByCoords(lat, lon) {
     loaderEl.classList.add("hidden");
   }
 }
+
 
 
 
