@@ -1,4 +1,4 @@
-const backendUrl = 'https://d41e340dce70.ngrok-free.app'; // Replace with your backend URL
+const backendUrl = 'https://84b6de086b85.ngrok-free.app'; // Replace with your backend URL
 
 const cityNameEl = document.querySelector("#city-name-date");
 const tempValueEl = document.querySelector("#temp-value");
@@ -83,7 +83,11 @@ async function fetchWeather(city) {
     windSpeedEl.textContent = "Wind Speed: --";
     forecastContainerEl.innerHTML = "";
     errorContainerEl.classList.add("hidden");
-    const response = await fetch(`${backendUrl}/api/weather/${city}`);
+    const response = awaitfetch(`${backendUrl}/api/weather/${city}`, {
+  headers: {
+    "ngrok-skip-browser-warning": "true"
+  }
+});
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.error || "City not found");
@@ -163,7 +167,11 @@ async function fetchWeatherByCoords(lat, lon) {
     windSpeedEl.textContent = "Wind Speed: --";
     forecastContainerEl.innerHTML = "";
     loaderEl.classList.remove("hidden");
-    const response = await fetch(`${backendUrl}/api/weather/coords?lat=${lat}&lon=${lon}`);
+    const response = await fetch(`${backendUrl}/api/weather/coords?lat=${lat}&lon=${lon}`, {
+  headers: {
+    "ngrok-skip-browser-warning": "true"
+  }
+});
     if (!response.ok) {
       throw new Error("Failed to fetch weather data by coordinates.");
     }
@@ -180,6 +188,7 @@ async function fetchWeatherByCoords(lat, lon) {
     loaderEl.classList.add("hidden");
   }
 }
+
 
 
 
