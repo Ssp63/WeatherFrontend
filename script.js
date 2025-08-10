@@ -1,4 +1,4 @@
-const backendUrl = 'https://84b6de086b85.ngrok-free.app'; // Replace with your backend URL
+const backendUrl = 'https://e0d471c43f9e.ngrok-free.app'; // Replace with your backend URL
 
 const cityNameEl = document.querySelector("#city-name-date");
 const tempValueEl = document.querySelector("#temp-value");
@@ -188,6 +188,7 @@ async function fetchWeatherByCoords(lat, lon) {
     loaderEl.classList.add("hidden");
   }
 }
+
 
 
 
